@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>竞彩网 · 简明指南与访问提醒</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #faf6f0;
+            font-family: 'Segoe UI', 'Noto Sans SC', system-ui, -apple-system, Helvetica, Arial, sans-serif;
+            color: #2c2b28;
+            line-height: 1.7;
+            padding: 0 20px;
+        }
+
+        .page-wrap {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 40px 0 60px;
+        }
+
+        /* 顶部导航 */
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0 16px;
+            border-bottom: 1px solid #e2dbd0;
+            margin-bottom: 36px;
+        }
+
+        .logo-area {
+            font-size: 1.2rem;
+            font-weight: 550;
+            letter-spacing: 0.3px;
+            color: #3f3b34;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #5b554a;
+            font-size: 0.95rem;
+            padding: 4px 0;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        .nav-links a:hover {
+            border-bottom-color: #b99f7c;
+            color: #2c2b28;
+        }
+
+        /* hero 区 – 简明说明 */
+        .hero {
+            padding: 24px 0 20px;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 480;
+            letter-spacing: 1px;
+            color: #3a352e;
+            margin-bottom: 18px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #4e4a42;
+            max-width: 640px;
+            margin-bottom: 12px;
+        }
+
+        .hero .highlight {
+            background: #f0ebe3;
+            padding: 18px 22px;
+            border-left: 4px solid #b99f7c;
+            border-radius: 0 8px 8px 0;
+            margin: 24px 0 12px;
+            font-size: 1rem;
+        }
+
+        /* 文章排版 / 卡片 */
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 440;
+            color: #38342c;
+            margin: 40px 0 16px;
+            padding-bottom: 6px;
+            border-bottom: 1px dashed #d6cec0;
+        }
+
+        .card-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 22px 26px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03), 0 4px 14px rgba(0, 0, 0, 0.02);
+            border: 1px solid #ede7dd;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 8px 24px rgba(0, 0, 0, 0.02);
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #3f3a32;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 0.98rem;
+            color: #545048;
+            margin-bottom: 8px;
+        }
+
+        .card ul {
+            padding-left: 20px;
+            margin: 8px 0 4px;
+            list-style: none;
+        }
+
+        .card ul li {
+            position: relative;
+            padding-left: 18px;
+            margin-bottom: 6px;
+            color: #4e4a42;
+            font-size: 0.96rem;
+        }
+
+        .card ul li::before {
+            content: "·";
+            position: absolute;
+            left: 0;
+            color: #b99f7c;
+            font-weight: 700;
+        }
+
+        .card .tag {
+            display: inline-block;
+            background: #f0ebe3;
+            padding: 2px 12px;
+            border-radius: 30px;
+            font-size: 0.78rem;
+            color: #5b554a;
+            margin-right: 6px;
+        }
+
+        /* 引用块 / 提示框 */
+        .notice-box {
+            background: #f5efe7;
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin: 32px 0;
+            border: 1px solid #e5dcd0;
+            color: #3e3a33;
+        }
+
+        .notice-box strong {
+            color: #2c2b28;
+        }
+
+        .notice-box a {
+            color: #6b5f4d;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            font-weight: 450;
+        }
+
+        .notice-box a:hover {
+            color: #2c2b28;
+        }
+
+        .faq-item {
+            margin-bottom: 22px;
+        }
+
+        .faq-item h4 {
+            font-weight: 520;
+            font-size: 1.05rem;
+            color: #3f3a32;
+            margin-bottom: 6px;
+        }
+
+        .faq-item p {
+            font-size: 0.98rem;
+            color: #5d574e;
+            padding-left: 4px;
+        }
+
+        /* 内嵌链接 */
+        .inline-link {
+            color: #6b5f4d;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            font-weight: 450;
+            transition: color 0.15s;
+        }
+
+        .inline-link:hover {
+            color: #2c2b28;
+        }
+
+        /* 底部 */
+        .footer-note {
+            margin-top: 60px;
+            padding-top: 22px;
+            border-top: 1px solid #e2dbd0;
+            font-size: 0.85rem;
+            color: #7a7266;
+            text-align: center;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            .page-wrap {
+                padding: 20px 0 40px;
+            }
+
+            .top-bar {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+                padding-bottom: 14px;
+            }
+
+            .nav-links {
+                gap: 18px;
+                flex-wrap: wrap;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .card {
+                padding: 18px 18px;
+            }
+
+            .notice-box {
+                padding: 16px 18px;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrap">
+        <!-- 顶部导航 -->
+        <nav class="top-bar">
+            <span class="logo-area">简明指南</span>
+            <div class="nav-links">
+                <a href="#">介绍</a>
+                <a href="#">场景</a>
+                <a href="#">说明</a>
+            </div>
+        </nav>
+
+        <!-- hero 简明引导 -->
+        <div class="hero">
+            <h1>竞彩网 · 访问与使用笔记</h1>
+            <p>一份生活化的简明手册，帮你快速了解基础操作、常见场景以及访问时的注意事项。</p>
+            <div class="highlight">
+                <strong>访问提醒：</strong> 建议在常规网络环境下使用移动端或桌面浏览器。遇到加载缓慢时，可稍后重试或检查本地连接。
+            </div>
+        </div>
+
+        <!-- 核心介绍段落 -->
+        <section>
+            <h2 class="section-title">从基础开始</h2>
+            <p style="margin-bottom: 18px; color: #4a4640;">
+                如果你刚开始接触，可以把 <a class="inline-link" href="https://mobile-app-sporttery.com">竞彩网</a> 理解为一个综合性的体育资讯与赛事数据平台——它提供赛事信息、即时比分、赛程数据等基础内容模块。整体界面以清晰的信息层级为主，适合快速浏览和查询。
+            </p>
+            <p style="margin-bottom: 6px; color: #4a4640;">
+                日常使用时，建议先熟悉首页的导航分区：赛事分类、数据统计以及个人关注。不需要额外注册就能查看大部分公开内容，部分个性化功能可能需要登录。
+            </p>
+        </section>
+
+        <!-- 三个场景模块 (卡片) -->
+        <section>
+            <h2 class="section-title">三个典型使用场景</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>🏟️ 赛前快速浏览</h3>
+                    <p>打开页面后，默认显示当日主要赛事列表。你可以按联赛、时间或关注度筛选。每个条目都包含对阵双方、开赛时间和基础数据摘要。</p>
+                    <ul>
+                        <li>重点赛事会以不同底色标注</li>
+                        <li>点击比赛行可展开详细数据面板</li>
+                        <li>支持收藏常用联赛到顶部</li>
+                    </ul>
+                    <p><span class="tag">提示</span> 赛前 10–30 分钟数据更新最频繁</p>
+                </div>
+
+                <div class="card">
+                    <h3>📊 赛中实时追踪</h3>
+                    <p>比赛进行时，平台提供文字直播、关键事件时间线、实时控球率等统计。页面每 15–30 秒自动刷新一次。</p>
+                    <ul>
+                        <li>可以同时追踪最多 4 场比赛</li>
+                        <li>红黄牌、进球、换人实时推送</li>
+                        <li>部分数据在移动端适配更紧凑</li>
+                    </ul>
+                    <p><span class="tag">提醒</span> 建议使用 Wi-Fi 或稳定 4G/5G，避免频繁断连</p>
+                </div>
+
+                <div class="card">
+                    <h3>📅 赛程与历史查询</h3>
+                    <p>顶部分页切换至「赛程」模式，可查看未来一周的预排赛事，或回查过去 30 天的完整赛果。支持按日期、联赛、球队三种维度过滤。</p>
+                    <ul>
+                        <li>历史比赛包含最终比分和基础统计</li>
+                        <li>赛程时间以北京时间为准</li>
+                        <li>列表视图与日历视图可切换</li>
+                    </ul>
+                    <p><span class="tag">小技巧</span> 使用搜索框直接输入球队名或联赛代码</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 常见说明 / 提示框 -->
+        <div class="notice-box">
+            <strong>⚡ 访问与使用提醒</strong>
+            <p style="margin-top: 8px;">
+                部分赛事数据可能存在几分钟延迟，属于正常数据同步范围。不要依赖单一场次信息做重要决策。如果你遇到页面显示异常，可尝试清理浏览器缓存或更换设备访问。关于数据来源、更新频率等具体说明，可参考 <a href="https://mobile-app-sporttery.com">竞彩网</a> 页面底部的帮助文档链接。
+            </p>
+        </div>
+
+        <!-- FAQ 摘要 -->
+        <section>
+            <h2 class="section-title">常见说明摘要</h2>
+            <div class="faq-item">
+                <h4>需要注册账号才能看吗？</h4>
+                <p>大部分公开信息（赛程、比分、联赛排名）无需登录。保存个人偏好或关注列表则需要创建账号。</p>
+            </div>
+            <div class="faq-item">
+                <h4>移动端和桌面端有区别吗？</h4>
+                <p>核心数据一致，但移动端针对触摸操作做了布局优化，部分交互按钮更大，建议根据你的常用设备选择。</p>
+            </div>
+            <div class="faq-item">
+                <h4>数据更新频率是怎样的？</h4>
+                <p>赛前阶段每 5–10 分钟更新一次阵容和天气信息；赛中实时数据约 15–30 秒刷新；赛后 10 分钟内归档。</p>
+            </div>
+            <div class="faq-item">
+                <h4>遇到卡顿或白屏怎么办？</h4>
+                <p>先检查本地网络，也可以尝试关闭其他占用带宽的应用。如果持续异常，可稍后重新加载页面。</p>
+            </div>
+        </section>
+
+        <!-- 底部 -->
+        <div class="footer-note">
+            简明指南 · 内容仅供一般参考 · <a href="https://mobile-app-sporttery.com" style="color: #6b5f4d; text-decoration: underline;">竞彩网</a>
+        </div>
+    </div>
+</body>
+</html>
